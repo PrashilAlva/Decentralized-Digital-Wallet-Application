@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Home | prashCOIN</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="text-align: center;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">prashCOIN</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" onclick="javascript:App.toggleAccount()">CREATE ACCOUNT <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" onclick="javascript:App.togglebal()">CHECK BALANCE <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" onclick="javascript:App.toggletransfer()">TRANSFER AMOUNT <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <br><br>
+      <div id="account">
+        <form action="javascript:App.createaccount()" method="POST">
+          <h1>Create Account</h1>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Account Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="cust_name" placeholder="Please enter the Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">PIN</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="cust_pin" placeholder="PIN" size="4">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10" style="padding-left: 200px;">
+              <input type="submit" value="Add Account" class= "btn btn-outline-primary">
+            </div>
+          </div>
+        </form>
+    </div>
+    <div id="balance">
+    <h1>Check Balance</h1>
+    <form action="javascript:App.checkbalance()" method="POST">
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">PIN</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="bal_pin" placeholder="PIN" size="4">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-10" style="padding-left: 200px;">
+          <input type="submit" value="Check Balance" class= "btn btn-outline-primary">
+        </div>
+      </div>
+    </form>
+    </div>
+    <div id="transfer">
+    <h1>Transfer Coins</h1>
+    <form action="javascript:App.transferCoin()" method="POST">
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Receiver</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="receiver_address" placeholder="Please enter the Name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Amount</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="amount" placeholder="Please enter the Amount">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">PIN</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="pin" placeholder="PIN" size="4">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-10" style="padding-left: 200px;">
+          <input type="submit" value="Transfer Coins" class= "btn btn-outline-primary">
+        </div>
+      </div>
+    </form>
+    </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
